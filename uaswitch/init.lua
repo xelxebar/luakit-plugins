@@ -22,7 +22,7 @@ local window    = window
 
 module("plugins.uaswitch")
 
-ua_alias_default = "default"
+ua_alias_default = globals.useragent
 
 ua_strings_file = plugins.plugins_dir .. "uaswitch/ua_strings.lua"
 
@@ -70,8 +70,7 @@ end
 
 function load()
     load_ua_strings()
-    -- switch_to(ua_alias_default)
-    switch_to("inferfox") -- And let them choke! ;'D
+    switch_to(ua_alias_default)
 end
 
 -- Add commands.
